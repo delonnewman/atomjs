@@ -133,4 +133,5 @@ License
 =======
 
 Copyright © 2014, Christian Johansen. Copyright © 2019, Delon Newman.
-Code released under the BSD license. Documentation released under CC Attribution-Share Alike.
+
+See [LICENSE](LICENSE)
