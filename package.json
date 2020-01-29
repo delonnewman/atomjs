@@ -1,6 +1,6 @@
 {
   "name": "@delonnewman/atom",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Shared, synchronous, independent state - Clojure Atoms for Javascript",
   "main": "atom.js",
   "scripts": {
@@ -16,7 +16,7 @@
     "concurrency",
     "concurrent",
     "functional",
-    "funtional-programming",
+    "functional-programming",
     "state",
     "shared-state",
     "synchronous"

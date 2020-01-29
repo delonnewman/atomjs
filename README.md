@@ -1,4 +1,7 @@
 ![Node.js CI](https://github.com/delonnewman/atomjs/workflows/Node.js%20CI/badge.svg)
+![npm](https://img.shields.io/npm/v/delonnewman/atom)
+[![dependencies Status](https://david-dm.org/delonnewman/atomjs/status.svg)](https://david-dm.org/delonnewman/conveyor)
+[![devDependencies Status](https://david-dm.org/delonnewman/atomjs/dev-status.svg)](https://david-dm.org/delonnewman/conveyor?type=dev)
 
 atom.js
 =======
@@ -36,7 +39,7 @@ to changes, and for validating state changes.
 
 ```js
 function startApp(root) {
-    var state = atom.createAtom({});
+    var state = atom({});
 
     function render() {
         React.renderComponent(AppUI(state.deref()), root);
@@ -46,7 +49,7 @@ function startApp(root) {
     state.addWatch("poll-update", render);
 
     pollForNewData(function (newData) {
-        state.replace(newData);
+        state.reset(newData);
     });
 
     // ...
