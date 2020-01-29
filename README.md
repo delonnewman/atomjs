@@ -83,10 +83,16 @@ atom.reset({}); // Throws exception
 ```
 
 
+`atom.isAtom(val)`
+------------------
+
+Returns true if `val` is an atom instance otherwise returns false.
+
+
 `atom#deref()` 
 --------------
 
-(aliased as `atom.deref(value)`
+(aliased as `atom.deref(value)`)
 
 Returns the contained value.
 
