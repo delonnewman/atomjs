@@ -1,0 +1,34 @@
+{
+  "name": "atomjs",
+  "version": "0.1.0",
+  "description": "Shared, synchronous, independent state - Clojure Atoms for Javascript",
+  "main": "atom.js",
+  "scripts": {
+    "test": "make test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/delonnewman/atomjs.git"
+  },
+  "keywords": [
+    "clojure",
+    "atom",
+    "concurrency",
+    "concurrent",
+    "functional",
+    "funtional-programming",
+    "state",
+    "shared-state",
+    "synchronous"
+  ],
+  "author": "Christian Johansen, Delon Newman",
+  "license": "SEE LICENSE IN LICENSE",
+  "bugs": {
+    "url": "https://github.com/delonnewman/atomjs/issues"
+  },
+  "homepage": "https://github.com/delonnewman/atomjs#readme",
+  "devDependencies": {
+    "jasmine": "^3.5.0",
+    "uglify": "^0.1.5"
+  }
+}
