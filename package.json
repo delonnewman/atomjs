@@ -29,6 +29,6 @@
   "homepage": "https://github.com/delonnewman/atomjs#readme",
   "devDependencies": {
     "jasmine": "^3.5.0",
-    "uglify": "^0.1.5"
+    "uglify-js": "^3.7.6"
   }
 }
