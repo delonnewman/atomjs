@@ -1,5 +1,5 @@
 {
-  "name": "atomjs",
+  "name": "@delonnewman/atom",
   "version": "0.1.0",
   "description": "Shared, synchronous, independent state - Clojure Atoms for Javascript",
   "main": "atom.js",

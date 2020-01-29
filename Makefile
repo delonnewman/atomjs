@@ -13,7 +13,7 @@ test:
 	$(NODE_BIN) $(JASMINE_BIN)
 
 publish:
-	npm publish
+	npm publish --access=public
 
 deps: package-lock.json
 
