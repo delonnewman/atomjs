@@ -1,5 +1,7 @@
 // jshint esversion: 6
-var atom = require('../atom.js');
+if (typeof module !== 'undefined') {
+    var atom = require('../atom.js');
+}
 
 function nat(max) {
     return Math.floor(Math.random() * Math.floor(max || 10000));

@@ -61,7 +61,7 @@
         return val instanceof Atom;
     };
 
-    if (module.exports !== void(0)) {
+    if (typeof module !== 'undefined') {
         module.exports = atom;
     }
     else {
