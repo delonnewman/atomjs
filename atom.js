@@ -6,7 +6,7 @@
 
     function Atom(val, options) {
         var watchers = {};
-        var validator = options && options.validator || alawysValid;
+        var validator = options && options.validator || alwaysValid;
 
         function transition(next) {
             if (!validator(next)) {
@@ -19,7 +19,7 @@
             val = next;
 
             Object.keys(watchers).forEach(function (k) {
-                watchers[k](k, atom, prev, next);
+                watchers[k].call(null, k, atom, prev, next);
             });
         }
 
@@ -60,5 +60,12 @@
     atom.isAtom = function(val) {
         return val instanceof Atom;
     };
+
+    if (module.exports !== void(0)) {
+        module.exports = atom;
+    }
+    else {
+        this.atom = atom;
+    }
 
 }).call(this);
