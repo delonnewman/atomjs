@@ -4,7 +4,7 @@ JASMINE_BIN=node_modules/jasmine/bin/jasmine.js
 
 .PHONY: docs clean deps test publish all
 
-all: atom.min.js docs
+all: deps atom.min.js docs
 
 atom.min.js:
 	$(UGLIFY_BIN) atom.js > atom.min.js
@@ -15,9 +15,9 @@ test:
 publish:
 	npm publish --access=public
 
-deps: package-lock.json
+deps: node_modules
 
-package-lock.json:
+node_modules:
 	npm install
 
 docs: docs/index.html
