@@ -1,3 +1,5 @@
+![Node.js CI](https://github.com/delonnewman/atomjs/workflows/Node.js%20CI/badge.svg)
+
 atom.js
 =======
 
