@@ -132,6 +132,6 @@ Prints a useful string representation of the contents of the atom.
 License
 =======
 
-Copyright © 2014, Christian Johansen. Copyright © 2019, Delon Newman.
+Copyright © 2014, 2019 Christian Johansen, Delon Newman.
 
 See [LICENSE](LICENSE)
