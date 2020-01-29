@@ -1,7 +1,7 @@
 ![Node.js CI](https://github.com/delonnewman/atomjs/workflows/Node.js%20CI/badge.svg)
 ![npm](https://img.shields.io/npm/v/@delonnewman/atom)
-[![dependencies Status](https://david-dm.org/delonnewman/atomjs/status.svg)](https://david-dm.org/delonnewman/conveyor)
-[![devDependencies Status](https://david-dm.org/delonnewman/atomjs/dev-status.svg)](https://david-dm.org/delonnewman/conveyor?type=dev)
+[![dependencies Status](https://david-dm.org/delonnewman/atomjs/status.svg)](https://david-dm.org/delonnewman/atomjs)
+[![devDependencies Status](https://david-dm.org/delonnewman/atomjs/dev-status.svg)](https://david-dm.org/delonnewman/atomjs?type=dev)
 
 atom.js
 =======
