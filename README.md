@@ -95,7 +95,7 @@ Returns the contained value.
 Replace the current state with a new value
 
 
-`atom.swap(fn[, ...])`
+`atom#swap(fn[, ...])`
 ----------------------
 
 Update the state by applying the function to the current value, and setting the
@@ -105,7 +105,7 @@ will replace the current value with what is returned from
 `fn(atomValue, 1, 2, 3)`.
 
 
-`atom.addWatch(key, function (key, ref, old, new) {})`
+`atom#addWatch(key, function (key, ref, old, new) {})`
 ------------------------------------------------------
 
 Add a function that will be called whenever the atom value changes. The key is
@@ -119,17 +119,18 @@ again. The callback is called with four arguments whenever the state changes
 - `new` - The new value
 
 
-`removeWatch(key)`
-------------------
+`atom#removeWatch(key)`
+-----------------------
 
 Removes the previously added watcher.
 
-`toString`
-----------
+`atom#toString`
+---------------
 
 Prints a useful string representation of the contents of the atom.
 
-## License
+License
+=======
 
 Copyright © 2014, Christian Johansen. Copyright © 2019, Delon Newman.
 Code released under the BSD license. Documentation released under CC Attribution-Share Alike.
