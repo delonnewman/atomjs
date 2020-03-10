@@ -20,17 +20,6 @@ deps: node_modules
 node_modules:
 	npm install
 
-docs: docs/index.html
-
-docs/index.html: docs/atom.html
-	mv docs/atom.html docs/index.html
-
-docs/atom.html: /usr/local/bin/docco
-	docco atom.js
-
 clean:
 	rm -rf docs
 	rm atom.min.js
-
-/usr/local/bin/docco:
-	npm install -g docco
