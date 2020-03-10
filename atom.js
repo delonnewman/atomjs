@@ -69,7 +69,7 @@
         module.exports = atom;
     }
     else {
-        this.atom = atom;
+        window.atom = atom;
     }
 
 }).call(this);

@@ -9,7 +9,7 @@ all: deps atom.min.js docs
 atom.min.js:
 	$(UGLIFY_BIN) atom.js > atom.min.js
 
-test:
+test: deps
 	$(NODE_BIN) $(JASMINE_BIN)
 
 publish:
