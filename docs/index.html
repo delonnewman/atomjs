@@ -38,7 +38,7 @@
 
     <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">Atom</span>(<span class="hljs-params">val, options</span>) </span>{
         <span class="hljs-keyword">var</span> watchers = {};
-        <span class="hljs-keyword">var</span> validator = options &amp;&amp; options.validator || alawysValid;
+        <span class="hljs-keyword">var</span> validator = options &amp;&amp; options.validator || alwaysValid;
 
         <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">transition</span>(<span class="hljs-params">next</span>) </span>{
             <span class="hljs-keyword">if</span> (!validator(next)) {
@@ -51,25 +51,37 @@
             val = next;
 
             <span class="hljs-built_in">Object</span>.keys(watchers).forEach(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">k</span>) </span>{
-                watchers[k](k, atom, prev, next);
+                watchers[k].call(<span class="hljs-literal">null</span>, k, atom, prev, next);
             });
         }
 
         <span class="hljs-keyword">this</span>.addWatch = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">key, fn</span>) </span>{
             watchers[key] = fn;
+            <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>;
         };
 
         <span class="hljs-keyword">this</span>.removeWatch = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">key</span>) </span>{
             <span class="hljs-keyword">delete</span> watchers[key];
+            <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>;
         };
 
         <span class="hljs-keyword">this</span>.swap = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">fn</span>) </span>{
             <span class="hljs-keyword">var</span> args = [val].concat([].slice.call(<span class="hljs-built_in">arguments</span>, <span class="hljs-number">1</span>));
             transition(fn.apply(<span class="hljs-literal">null</span>, args));
+            <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>;
         };
 
         <span class="hljs-keyword">this</span>.reset = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">v</span>) </span>{
             transition(v);
+            <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>;
+        };
+
+        <span class="hljs-keyword">this</span>.compareAndSet = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">oldVal, newVal</span>) </span>{
+            <span class="hljs-keyword">if</span> (oldVal === val) {
+                <span class="hljs-keyword">this</span>.reset(newVal);
+                <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;
+            }
+            <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;
         };
 
         <span class="hljs-keyword">this</span>.deref = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
@@ -92,6 +104,13 @@
     atom.isAtom = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">val</span>) </span>{
         <span class="hljs-keyword">return</span> val <span class="hljs-keyword">instanceof</span> Atom;
     };
+
+    <span class="hljs-keyword">if</span> (<span class="hljs-keyword">typeof</span> <span class="hljs-built_in">module</span> !== <span class="hljs-string">'undefined'</span>) {
+        <span class="hljs-built_in">module</span>.exports = atom;
+    }
+    <span class="hljs-keyword">else</span> {
+        <span class="hljs-built_in">window</span>.atom = atom;
+    }
 
 }).call(<span class="hljs-keyword">this</span>);</pre></div></div>
             

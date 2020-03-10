@@ -92,16 +92,18 @@ describe('atom#removeWatch', () => {
 
 describe('atom#compareAndSet', () => {
     it('should not reset if old value is not equal to value', () => {
-        var ref = atom(1);
-        expect(ref.deref()).toBe(1);
-        expect(ref.compareAndSet(2, 3)).toBe(false);
-        expect(ref.deref()).toBe(1);
+        let n = nat();
+        let ref = atom(n);
+        expect(ref.deref()).toBe(n);
+        expect(ref.compareAndSet(n + 1, n + 2)).toBe(false);
+        expect(ref.deref()).toBe(n);
     });
 
     it('should reset if old value is equal to value', () => {
-        var ref = atom(4);
-        expect(ref.deref()).toBe(4);
-        expect(ref.compareAndSet(4, 5)).toBe(true);
-        expect(ref.deref()).toBe(5);
+        let n = nat();
+        let ref = atom(n);
+        expect(ref.deref()).toBe(n);
+        expect(ref.compareAndSet(n, n + 1)).toBe(true);
+        expect(ref.deref()).toBe(n + 1);
     });
 });
