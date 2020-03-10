@@ -44,6 +44,14 @@
             return this;
         };
 
+        this.compareAndSet = function (oldVal, newVal) {
+            if (oldVal === val) {
+                this.reset(newVal);
+                return true;
+            }
+            return false;
+        };
+
         this.deref = function () {
             return val;
         };
