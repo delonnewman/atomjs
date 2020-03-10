@@ -25,19 +25,23 @@
 
         this.addWatch = function (key, fn) {
             watchers[key] = fn;
+            return this;
         };
 
         this.removeWatch = function (key) {
             delete watchers[key];
+            return this;
         };
 
         this.swap = function (fn) {
             var args = [val].concat([].slice.call(arguments, 1));
             transition(fn.apply(null, args));
+            return this;
         };
 
         this.reset = function (v) {
             transition(v);
+            return this;
         };
 
         this.deref = function () {
