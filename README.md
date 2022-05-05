@@ -1,7 +1,5 @@
 ![Node.js CI](https://github.com/delonnewman/atomjs/workflows/Node.js%20CI/badge.svg)
 ![npm](https://img.shields.io/npm/v/@delonnewman/atom)
-[![dependencies Status](https://david-dm.org/delonnewman/atomjs/status.svg)](https://david-dm.org/delonnewman/atomjs)
-[![devDependencies Status](https://david-dm.org/delonnewman/atomjs/dev-status.svg)](https://david-dm.org/delonnewman/atomjs?type=dev)
 
 # Atom.js
 
@@ -139,3 +137,7 @@ License
 Copyright © 2014, 2019 Christian Johansen, Delon Newman.
 
 See [LICENSE](LICENSE)
+
+# Support
+
+<a href="https://www.buymeacoffee.com/delonnewman" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" style="height: 60px !important;width: 217px !important;" ></a>
